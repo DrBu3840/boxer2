@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Боксер Кликер</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Main Game View -->
+        <div id="main-view" class="view active">
+            <div class="header">
+                <h1>🥊 Боксер Кликер</h1>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Монеты:</span>
+                        <span id="coins-display" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Сила удара:</span>
+                        <span id="power-display" class="stat-value">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Status -->
+            <div id="training-status" class="training-status hidden">
+                <div id="training-active" class="status status--success hidden">
+                    <span>🏃‍♂️ Тренировка: <span id="training-time">60</span>с</span>
+                </div>
+                <div id="training-cooldown" class="status status--warning hidden">
+                    <span>⏰ Перезарядка: <span id="cooldown-time">600</span></span>
+                </div>
+            </div>
+
+            <!-- Punching Bag -->
+            <div class="punching-bag-container">
+                <button id="punching-bag" class="punching-bag" type="button">
+                    <div class="bag-emoji">🥊</div>
+                    <div class="bag-text">Бить грушу!</div>
+                </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="training-btn" class="btn btn--primary btn--full-width" type="button">
+                    Персональная тренировка (30💰)
+                </button>
+                <button id="upgrade-btn" class="btn btn--secondary btn--full-width" type="button">
+                    Улучшить силу (10💰)
+                </button>
+                <button id="leaderboard-btn" class="btn btn--outline btn--full-width" type="button">
+                    Рейтинг игроков
+                </button>
+            </div>
+        </div>
+
+        <!-- Leaderboard View -->
+        <div id="leaderboard-view" class="view">
+            <div class="header">
+                <h2>🏆 Рейтинг игроков</h2>
+            </div>
+            
+            <div class="leaderboard">
+                <div class="leaderboard-header">
+                    <span>Место</span>
+                    <span>Игрок</span>
+                    <span>Монеты</span>
+                </div>
+                <div id="leaderboard-list" class="leaderboard-list">
+                    <!-- Leaderboard entries will be populated by JS -->
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="back-btn" class="btn btn--secondary btn--full-width" type="button">
+                    Назад к игре
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>
